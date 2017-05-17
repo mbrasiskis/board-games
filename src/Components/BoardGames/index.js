@@ -22,13 +22,15 @@ class BoardGames extends React.Component {
     };
 
     render() {
-        return(
+        return (
             <div>
                 <input type="text" value={this.state.input} onChange={this.onChange} onKeyPress={this.onKeyPress}/>
                 <ul>
                     {this.props.boardGames.map((game, i) => {
                         return (
-                            <li key={i}>{game}<button onClick={this.onRemove.bind(this, i)}>Remove</button></li>
+                            <li key={i}>{game}
+                                <button onClick={this.onRemove.bind(this, i)}>Remove</button>
+                            </li>
                         )
                     })}
                 </ul>
