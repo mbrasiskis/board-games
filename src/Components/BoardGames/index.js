@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class BoardGames extends React.Component {
     defaultState = {
@@ -39,7 +39,8 @@ class BoardGames extends React.Component {
                 <ul>
                     {this.props.boardGames.map((game, i) => {
                         return (
-                            <li key={i}>{game.title}: {game.minPlayers} - {game.maxPlayers} players
+                            <li key={i}>
+                                <span>{game.get('title')}: {game.get('minPlayers')} - {game.get('maxPlayers')} players</span>
                                 <button onClick={this.onRemove.bind(this, i)}>Remove</button>
                             </li>
                         )
